@@ -10,26 +10,18 @@
 -- FROM user_dependencies
 -- WHERE referenced_name = 'BB_BASKET';
 
-desc user_objects;
-
-/
+DESCRIBE USER_OBJECTS
 
 SELECT
-    rpad(object_name, 23) "OBJECT_NAME",
-    status,
-    timestamp
+    OBJECT_NAME,
+    STATUS,
+    TIMESTAMP
 FROM
-    user_objects
+    USER_OBJECTS
 WHERE
-    object_type = 'PROCEDURE';
+    OBJECT_TYPE = 'PROCEDURE';
 
-/
-
-desc user_dependencies;
-
-/
-
-column name format a15
+DESCRIBE USER_DEPENDENCIES;
 
 SELECT
     name,
@@ -38,5 +30,3 @@ FROM
     user_dependencies
 WHERE
     referenced_name = 'BB_BASKET';
-
-/
