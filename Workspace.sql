@@ -9,18 +9,19 @@
 -- SELECT name, type
 -- FROM user_dependencies
 -- WHERE referenced_name = 'BB_BASKET';
-DESC user_objects;
+
+desc user_objects;
 
 /
 
 SELECT
-  rpad(object_name, 23) "OBJECT_NAME",
-  status,
-  timestamp
+    rpad(object_name, 23) "OBJECT_NAME",
+    status,
+    timestamp
 FROM
-  user_objects
+    user_objects
 WHERE
-  object_type = 'PROCEDURE';
+    object_type = 'PROCEDURE';
 
 /
 
@@ -31,11 +32,11 @@ desc user_dependencies;
 column name format a15
 
 SELECT
-  name,
-  type
+    name,
+    type
 FROM
-  user_dependencies
+    user_dependencies
 WHERE
-  referenced_name = 'BB_BASKET';
+    referenced_name = 'BB_BASKET';
 
 /
