@@ -35,7 +35,7 @@ WHERE
 -- Assignment 8-2: Testing Dependencies on Stand-Alone Program Units
 -- In this assignment, you verify the effect of object modifications on the status of dependent objects. You work with a procedure and a function.
 -- 1. In a text editor, open the assignment08-02.txt file in the Chapter08 folder. This file contains statements to create the STATUS_CHECK_SP procedure and the STATUS_DESC_SF function. Review the code, and notice that the procedure includes a call to the function. Use the code in this file to create the two program units in SQL Developer.
-CREATE OR REPLACE FUNCTION status_desc_sf (
+CREATE OR REPLACE FUNCTION STATUS_DESC_SF (
     p_stage IN NUMBER
 ) RETURN VARCHAR2 IS
     lv_stage_txt VARCHAR2(30);
@@ -68,7 +68,7 @@ BEGIN
         bb_basketstatus
     WHERE
         idBasket = p_bask;
-    p_desc := status_desc_sf(p_stage);
+    p_desc := STATUS_DESC_SF(p_stage);
 END;
 /
 
@@ -87,7 +87,7 @@ WHERE
 -- 3. The STATUS_DESC_SF function adds a description of the numeric value for the IDSTAGE column. The company needs to add another order status stage for situations in which credit card approval fails. In SQL Developer, modify the function by adding the following ELSIF clause, and compile it. (Don’t compile or run the function again.)
 -- ELSIF p_stage = 6 THEN
 -- lv_stage_txt := 'Credit Card Not Approved';
-CREATE OR REPLACE FUNCTION status_desc_sf (
+CREATE OR REPLACE FUNCTION STATUS_DESC_SF (
     p_stage IN NUMBER
 ) RETURN VARCHAR2 IS
     lv_stage_txt VARCHAR2(30);
