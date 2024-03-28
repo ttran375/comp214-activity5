@@ -56,7 +56,7 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE status_check_sp (
+CREATE OR REPLACE PROCEDURE STATUS_CHECK_SP (
     p_bask IN NUMBER,
     p_stage OUT NUMBER,
     p_desc OUT VARCHAR2
@@ -123,12 +123,12 @@ WHERE
 -- 5. Call the procedure for basket 13, as shown in the following code:
 -- DECLARE
 -- lv_stage_num NUMBER(2); lv_desc_txt VARCHAR2(30);
--- BEGIN status_check_sp(13,lv_stage_num,lv_desc_txt); END;
+-- BEGIN STATUS_CHECK_SP(13,lv_stage_num,lv_desc_txt); END;
 DECLARE
     lv_stage_num NUMBER(2);
     lv_desc_txt  VARCHAR2(30);
 BEGIN
-    status_check_sp(13, lv_stage_num, lv_desc_txt);
+    STATUS_CHECK_SP(13, lv_stage_num, lv_desc_txt);
 END;
 /
 
