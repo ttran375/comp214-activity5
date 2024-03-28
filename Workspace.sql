@@ -9,7 +9,7 @@
 -- SELECT name, type
 -- FROM user_dependencies
 -- WHERE referenced_name = 'BB_BASKET';
-desc user_objects;
+DESC user_objects;
 
 /
 
